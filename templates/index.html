@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if hasil_pred %}
+    <h1>Decission Tree :
+        {% if (hasil_pred[0]) == 1 %}
+            Kualitas Udara:  tidak sehat
+        {% elif (hasil_pred[0]) == 0 %}
+            Kualitas Udara:  sehat
+        {% endif %} </h1>
+
+    <h1>Naive Bayes :
+        {% if (hasil_pred[1]) == 1 %}
+            Kualitas Udara:  tidak sehat
+        {% elif (hasil_pred[1]) == 0 %}
+            Kualitas Udara:  sehat
+        {% endif %} </h1>
+
+    <h1>KNN :
+        {% if (hasil_pred[2]) == 1 %}
+            Kualitas Udara:  tidak sehat
+        {% elif (hasil_pred[2]) == 0 %}
+            Kualitas Udara:  sehat
+        {% endif %} </h1>
+
+    <h1>Logistic Regression :
+        {% if (hasil_pred[3]) == 1 %}
+            Kualitas Udara:  tidak sehat
+        {% elif (hasil_pred[3]) == 0 %}
+            Kualitas Udara:  sehat
+        {% endif %} </h1>
+
+    <h1>SVM :
+        {% if (hasil_pred[4]) == 1 %}
+            Kualitas Udara:  tidak sehat
+        {% elif (hasil_pred[4]) == 0 %}
+            Kualitas Udara:  sehat
+        {% endif %} </h1>
+
+    <h1>Random Forest :
+        {% if (hasil_pred[5]) == 1 %}
+            Kualitas Udara:  tidak sehat
+        {% elif (hasil_pred[5]) == 0 %}
+            Kualitas Udara:  sehat
+        {% endif %} </h1>
+{% endif %}
+
+<form method="post" action="/predict">
+    <input type="text" id="pm10" name="pm10">PM10
+    <input type="text" id="pm25" name="pm25">PM2.5
+    <input type="text" id="so2" name="so2">SO2
+    <input type="text" id="co"  name="co">CO
+    <input type="text" id="o3" name="o3">O3
+    <input type="text" id="no2" name="no2">NO2
+
+    <button type="submit">Prediksi</button>
+</form>
+</body>
+</html>
